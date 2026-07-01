@@ -42,7 +42,7 @@ namespace MaquinaCafe.Tests
         public void TC03_SeleccionarBebida_ConSaldo_DispensaYReduceInventario()
         {
             _maquina.AgregarInventario("Cafe", 5);
-            _maquina.InsertarMoneda(100);
+            _maquina.InsertarMoneda(75);
 
             int antes = _maquina.Inventario("Cafe");
 
