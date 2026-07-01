@@ -8,11 +8,16 @@ jobs:
       - name: Clonar repositorio
         uses: actions/checkout@v3
 
-      - name: Configurar entorno
-        run: echo "Configurando entorno de compilación"
+      - name: Configurar .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar dependencias
+        run: dotnet restore MaquinaCafeTDD.sln
 
       - name: Compilar proyecto
-        run: dotnet build --configuration Release
+        run: dotnet build MaquinaCafeTDD.sln --configuration Release --no-restore
 
       - name: Ejecutar pruebas
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test MaquinaCafeTDD.sln --no-build --verbosity normal
