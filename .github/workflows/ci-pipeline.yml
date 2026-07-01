@@ -14,7 +14,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restaurar dependencias
-        run: dotnet restore MaquinaCafeTDD.sln
+        run: dotnet restore MaquinaCafeTDD.slnx
 
       - name: Compilar proyecto
         run: dotnet build MaquinaCafeTDD.sln --configuration Release --no-restore
